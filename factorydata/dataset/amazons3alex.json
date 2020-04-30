@@ -9,7 +9,9 @@
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
-				"type": "AmazonS3Location"
+				"type": "AmazonS3Location",
+				"bucketName": "testbucketalexm",
+				"fileName": "alexm.csv.txt"
 			}
 		}
 	}
