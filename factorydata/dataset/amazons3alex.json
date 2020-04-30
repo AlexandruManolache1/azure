@@ -1,0 +1,16 @@
+{
+	"name": "amazons3alex",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "amazonalexm",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AmazonS3Location"
+			}
+		}
+	}
+}
