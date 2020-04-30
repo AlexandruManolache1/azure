@@ -1,11 +1,11 @@
 {
 	"name": "alexmblob",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "AzureBlobStorage",
 		"typeProperties": {
-			"sasUri": "https://alexmblob.blob.core.windows.net/alexm?sp=racwdl&st=2020-04-30T13:25:47Z&se=2020-05-01T13:25:47Z&sv=2019-10-10&sr=c&sig=SNXSnbYnlxFnbjy%2BI81mjwcp7OawtydRgu0fQ99dwyQ%3D?sp=racwdl&st=2020-04-30T13:25:47Z&se=2020-05-01T13:25:47Z&sv=2019-10-10&sr=c&sig=SNXSnbYnlxFnbjy%2BI81mjwcp7OawtydRgu0fQ99dwyQ%3D"
+			"serviceEndpoint": "https://alexmblob.blob.core.windows.net"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
