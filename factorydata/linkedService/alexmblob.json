@@ -1,0 +1,11 @@
+{
+	"name": "alexmblob",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"serviceEndpoint": "https://alexmblob.blob.core.windows.net"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
+}
