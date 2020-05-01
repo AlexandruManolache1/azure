@@ -1,5 +1,5 @@
 {
-	"name": "SursaLocala",
+	"name": "destinatieLocala",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "alexmblob",
@@ -10,8 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"folderPath": "output",
-				"container": "alexm"
+				"container": "alexdestinatie"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
