@@ -78,7 +78,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/SursaLocala')]",
+			"name": "[concat(parameters('factoryName'), '/destinatieLocala')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -91,8 +91,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"folderPath": "output",
-						"container": "alexm"
+						"container": "alexdestinatie"
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
@@ -177,13 +176,13 @@
 								"referenceName": "localCsvOnBlob",
 								"type": "DatasetReference"
 							},
-							"name": "sursalocala"
+							"name": "SursaLocalaBlob"
 						}
 					],
 					"sinks": [
 						{
 							"dataset": {
-								"referenceName": "SursaLocala",
+								"referenceName": "destinatieLocala",
 								"type": "DatasetReference"
 							},
 							"name": "sink1"
@@ -194,12 +193,12 @@
 							"name": "Filter1"
 						}
 					],
-					"script": "source(output(\n\t\tColumn_1 as string,\n\t\tColumn_2 as string,\n\t\tColumn_3 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false) ~> sursalocala\nsursalocala filter(Column_1=='alex') ~> Filter1\nFilter1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
+					"script": "source(output(\n\t\tColumn_1 as string,\n\t\tColumn_2 as string,\n\t\tColumn_3 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false) ~> SursaLocalaBlob\nSursaLocalaBlob filter(Column_1=='alex') ~> Filter1\nFilter1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
 				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/localCsvOnBlob')]",
-				"[concat(variables('factoryId'), '/datasets/SursaLocala')]"
+				"[concat(variables('factoryId'), '/datasets/destinatieLocala')]"
 			]
 		},
 		{
@@ -226,7 +225,7 @@
 								"type": "DataFlowReference",
 								"parameters": {},
 								"datasetParameters": {
-									"sursalocala": {},
+									"SursaLocalaBlob": {},
 									"sink1": {}
 								}
 							},
