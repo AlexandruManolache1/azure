@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"folderPath": "sursa",
+				"folderPath": "output",
 				"container": "alexm"
 			},
 			"columnDelimiter": ",",
