@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "Alexm"
+		},
+		"amazonalexm_secretAccessKey": {
+			"value": ""
+		},
+		"alexmblob_properties_typeProperties_serviceEndpoint": {
+			"value": "https://alexmblob.blob.core.windows.net"
+		},
+		"amazonalexm_properties_typeProperties_accessKeyId": {
+			"value": "AKIAYHMPWIR6IHU4RAF2"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
