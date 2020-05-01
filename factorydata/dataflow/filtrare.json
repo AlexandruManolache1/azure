@@ -1,12 +1,32 @@
 {
-	"name": "dataflow1",
+	"name": "filtrare",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
-			"sources": [],
-			"sinks": [],
-			"transformations": [],
-			"script": ""
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "localCsvOnBlob",
+						"type": "DatasetReference"
+					},
+					"name": "sursalocala"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "SursaLocala",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "Filter1"
+				}
+			],
+			"script": "source(output(\n\t\tColumn_1 as string,\n\t\tColumn_2 as string,\n\t\tColumn_3 as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false) ~> sursalocala\nsursalocala filter(ERROR_FUNCTION('Column_1=__SINGLE_QUOTE__alex__SINGLE_QUOTE__')) ~> Filter1\nFilter1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
 		}
 	}
 }
