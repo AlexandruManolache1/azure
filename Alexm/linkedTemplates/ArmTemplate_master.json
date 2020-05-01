@@ -7,13 +7,13 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "Alexm"
 		},
+		"alexmblob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'alexmblob'"
+		},
 		"amazonalexm_secretAccessKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'secretAccessKey' of 'amazonalexm'"
-		},
-		"alexmblob_properties_typeProperties_serviceEndpoint": {
-			"type": "string",
-			"defaultValue": "https://alexmblob.blob.core.windows.net"
 		},
 		"amazonalexm_properties_typeProperties_accessKeyId": {
 			"type": "string",
@@ -46,11 +46,11 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"alexmblob_connectionString": {
+						"value": "[parameters('alexmblob_connectionString')]"
+					},
 					"amazonalexm_secretAccessKey": {
 						"value": "[parameters('amazonalexm_secretAccessKey')]"
-					},
-					"alexmblob_properties_typeProperties_serviceEndpoint": {
-						"value": "[parameters('alexmblob_properties_typeProperties_serviceEndpoint')]"
 					},
 					"amazonalexm_properties_typeProperties_accessKeyId": {
 						"value": "[parameters('amazonalexm_properties_typeProperties_accessKeyId')]"

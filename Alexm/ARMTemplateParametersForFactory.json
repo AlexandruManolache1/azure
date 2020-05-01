@@ -5,11 +5,11 @@
 		"factoryName": {
 			"value": "Alexm"
 		},
-		"amazonalexm_secretAccessKey": {
+		"alexmblob_connectionString": {
 			"value": ""
 		},
-		"alexmblob_properties_typeProperties_serviceEndpoint": {
-			"value": "https://alexmblob.blob.core.windows.net"
+		"amazonalexm_secretAccessKey": {
+			"value": ""
 		},
 		"amazonalexm_properties_typeProperties_accessKeyId": {
 			"value": "AKIAYHMPWIR6IHU4RAF2"

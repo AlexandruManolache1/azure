@@ -6,18 +6,6 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "Alexm"
-		},
-		"alexmblob_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'alexmblob'"
-		},
-		"amazonalexm_secretAccessKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'secretAccessKey' of 'amazonalexm'"
-		},
-		"amazonalexm_properties_typeProperties_accessKeyId": {
-			"type": "string",
-			"defaultValue": "AKIAYHMPWIR6IHU4RAF2"
 		}
 	},
 	"variables": {
@@ -70,15 +58,13 @@
 						"inputs": [
 							{
 								"referenceName": "amazons3alex",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "BlobFolder",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					}
@@ -86,7 +72,6 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/amazons3alex')]",
 				"[concat(variables('factoryId'), '/datasets/BlobFolder')]"
 			]
 		},
@@ -108,9 +93,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/alexmblob')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/localCsvOnBlob')]",
@@ -144,62 +127,6 @@
 						"type": "String"
 					}
 				]
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/alexmblob')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/amazons3alex')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "amazonalexm",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Binary",
-				"typeProperties": {
-					"location": {
-						"type": "AmazonS3Location",
-						"bucketName": "testbucketalexm",
-						"fileName": "alexm.csv.txt"
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/amazonalexm')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/alexmblob')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('alexmblob_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/amazonalexm')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AmazonS3",
-				"typeProperties": {
-					"serviceUrl": "",
-					"accessKeyId": "[parameters('amazonalexm_properties_typeProperties_accessKeyId')]",
-					"secretAccessKey": {
-						"type": "SecureString",
-						"value": "[parameters('amazonalexm_secretAccessKey')]"
-					}
-				}
 			},
 			"dependsOn": []
 		}
