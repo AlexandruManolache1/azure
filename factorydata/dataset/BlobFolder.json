@@ -1,5 +1,5 @@
 {
-	"name": "Binary1",
+	"name": "BlobFolder",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "alexmblob",
