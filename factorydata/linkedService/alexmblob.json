@@ -1,11 +1,12 @@
 {
 	"name": "alexmblob",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "AzureBlobStorage",
 		"typeProperties": {
-			"serviceEndpoint": "https://alexmblob.blob.core.windows.net"
+			"connectionString": "DefaultEndpointsProtocol=https;AccountName=alexmblob;EndpointSuffix=core.windows.net;",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkFMRVhNXzYyYzIzY2Y5LWQ0YWQtNDcyMi05YTg2LTFkZTRlM2Y3Y2Q5NiINCn0="
 		}
-	},
-	"type": "Microsoft.DataFactory/factories/linkedservices"
+	}
 }
