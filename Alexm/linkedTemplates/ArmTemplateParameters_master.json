@@ -5,11 +5,17 @@
 		"factoryName": {
 			"value": "Alexm"
 		},
+		"AzureDataLakeStorage_accountKey": {
+			"value": ""
+		},
 		"alexmblob_connectionString": {
 			"value": ""
 		},
 		"amazonalexm_secretAccessKey": {
 			"value": ""
+		},
+		"AzureDataLakeStorage_properties_typeProperties_url": {
+			"value": "https://alexmblob.dfs.core.windows.net"
 		},
 		"amazonalexm_properties_typeProperties_accessKeyId": {
 			"value": "AKIAYHMPWIR6IHU4RAF2"

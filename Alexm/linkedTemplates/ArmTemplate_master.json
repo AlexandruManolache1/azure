@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "Alexm"
 		},
+		"AzureDataLakeStorage_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage'"
+		},
 		"alexmblob_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'alexmblob'"
@@ -14,6 +18,10 @@
 		"amazonalexm_secretAccessKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'secretAccessKey' of 'amazonalexm'"
+		},
+		"AzureDataLakeStorage_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://alexmblob.dfs.core.windows.net"
 		},
 		"amazonalexm_properties_typeProperties_accessKeyId": {
 			"type": "string",
@@ -46,11 +54,17 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"AzureDataLakeStorage_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage_accountKey')]"
+					},
 					"alexmblob_connectionString": {
 						"value": "[parameters('alexmblob_connectionString')]"
 					},
 					"amazonalexm_secretAccessKey": {
 						"value": "[parameters('amazonalexm_secretAccessKey')]"
+					},
+					"AzureDataLakeStorage_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage_properties_typeProperties_url')]"
 					},
 					"amazonalexm_properties_typeProperties_accessKeyId": {
 						"value": "[parameters('amazonalexm_properties_typeProperties_accessKeyId')]"
