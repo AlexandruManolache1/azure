@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "rezultatul2.csv",
+				"fileName": "rezultatul.csv",
 				"fileSystem": "alexdestinatie"
 			},
 			"columnDelimiter": ",",
